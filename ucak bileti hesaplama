@@ -41,25 +41,25 @@ public class project {
                 if ((yas > 0) && (yas < 12)&&(mesafe > 0)) {
 
                 ind = (mesafe * uc * kç) ;
-                ind1=ind*gdi;
-                tutar= (mesafe*uc)-ind-ind1;
+                ind1=((mesafe*uc)-ind)*gdi;
+                tutar= ((mesafe*uc)-ind-ind1)*2;
                 System.out.print("Bilet Fiyati :" + tutar);
             } else if ((yas < 0) || (mesafe < 0)) {
                 System.out.print("Hatali giris yaptiniz");
 
             } else if ((yas >= 12) && (yas <= 24)) {
                 ind = (mesafe * uc * yi);
-                ind1= (ind*gdi);
-                tutar = (mesafe * uc) - ind-ind1;
+                ind1= (((mesafe*uc)-ind)*gdi);
+                tutar = ((mesafe * uc) - ind-ind1)*2;
                 System.out.print("Bilet Fiyati :" + tutar);
             } else if (yas >= 65) {
                 ind = (mesafe * uc * yii);
-                ind1= (ind*gdi);
-                tutar = (mesafe * uc) - ind-ind1;
+                ind1= (((mesafe*uc)-ind)*gdi);
+                tutar = ((mesafe * uc) - ind-ind1)*2;
                 System.out.print("Bilet Fiyati :" + tutar);
             } else {
                 ind = (mesafe * uc * gdi);
-                tutar = (mesafe * uc) - ind;
+                tutar = ((mesafe * uc) - ind)*2;
                 System.out.print("Bilet Fiyati :" + tutar);
             }
 
