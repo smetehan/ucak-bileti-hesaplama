@@ -1,0 +1,73 @@
+import java.util.Scanner;
+
+public class project {
+    public static void main(String[] args) {
+        int yas, mesafe, tip;
+        double tutar, ind,ind1, yi = 0.1, yii = 0.3,kç=0.5, gdi = 0.2, uc = 0.10;
+        Scanner inp = new Scanner(System.in);
+
+        System.out.print("Mesafeyi KM cinsinden giriniz:");
+        mesafe = inp.nextInt();
+        System.out.print("Yasinizi giriniz :");
+        yas = inp.nextInt();
+        System.out.println("\n1-Tek Yon\n2- Gidis-Donus");
+        System.out.print("Lutfen yolculuk tipini seciniz :");
+        tip = inp.nextInt();
+        switch (tip) {
+            case 1:
+                if ((yas > 0) && (yas < 12) && (mesafe > 0)) {
+
+                    tutar = (mesafe * uc) / 2;
+                    System.out.print("Bilet Fiyati :" + tutar);
+                } else if ((yas < 0) || (mesafe < 0)) {
+                    System.out.print("Hatali giris yaptiniz");
+
+                } else if ((yas >= 12) && (yas <= 24)) {
+                    ind = mesafe * uc * yi;
+                    tutar = (mesafe * uc) - ind;
+                    System.out.print("Bilet Fiyati :" + tutar);
+                } else if (yas >= 65) {
+                    ind = mesafe * uc * yii;
+                    tutar = (mesafe * uc) - ind;
+                    System.out.print("Bilet Fiyati :" + tutar);
+                } else {
+                    tutar = (mesafe * uc);
+                    System.out.print("Bilet Fiyati :" + tutar);
+                }
+
+
+                break;
+            case 2:
+                if ((yas > 0) && (yas < 12)&&(mesafe > 0)) {
+
+                ind = (mesafe * uc * kç) ;
+                ind1=ind*gdi;
+                tutar= (mesafe*uc)-ind-ind1;
+                System.out.print("Bilet Fiyati :" + tutar);
+            } else if ((yas < 0) || (mesafe < 0)) {
+                System.out.print("Hatali giris yaptiniz");
+
+            } else if ((yas >= 12) && (yas <= 24)) {
+                ind = (mesafe * uc * yi);
+                ind1= (ind*gdi);
+                tutar = (mesafe * uc) - ind-ind1;
+                System.out.print("Bilet Fiyati :" + tutar);
+            } else if (yas >= 65) {
+                ind = (mesafe * uc * yii);
+                ind1= (ind*gdi);
+                tutar = (mesafe * uc) - ind-ind1;
+                System.out.print("Bilet Fiyati :" + tutar);
+            } else {
+                ind = (mesafe * uc * gdi);
+                tutar = (mesafe * uc) - ind;
+                System.out.print("Bilet Fiyati :" + tutar);
+            }
+
+            break;
+            default:
+                System.out.print("Hatali Giris Yaptiniz");
+        }
+
+    }
+
+}
